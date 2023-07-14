@@ -26,3 +26,16 @@
   grid-gap: 10px;
   margin-top: 20px;
 }
+
+.btn {
+  font-size: 24px;
+  padding: 10px;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
