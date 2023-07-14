@@ -28,7 +28,7 @@
 }
 
 .btn {
-  font-size: 24px;
+  font-size: 25px;
   padding: 10px;
   border: none;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
@@ -38,4 +38,8 @@
 
 .btn:hover {
   background-color: #ddd;
+}
+
+.equal {
+  grid-row: span 3;
 }
