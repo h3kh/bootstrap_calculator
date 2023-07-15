@@ -37,6 +37,11 @@ function calculateResult() {
   } else if (expression.includes('/')) {
     const operands = expression.split('/');
     result = parseFloat(operands[0]) / parseFloat(operands[1]);
+  } else if (expression.includes('^')) {
+    const operands = expression.split('^');
+    // The Math.pow() function is used to calculate the power of a number to another specified power.
+    // In this line, raises operands[0] to the power of operands[1]
+    result = Math.pow(parseFloat(operands[0]), parseFloat(operands[1]));
   }
 
   inputFieldEl.value = result;
