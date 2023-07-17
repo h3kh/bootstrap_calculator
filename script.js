@@ -78,5 +78,6 @@ function updateHistory() {
     // The appendChild() function is used to add an element as a child inside a target element (typically an HTML element).
     // Typically, before using appendChild(), you need to create a new element using createElement(). Then, using appendChild(), the new element is added as a child to the target element.
     historyEl.appendChild(calculationEl);
+    historyEl.classList.add('inputStyle');
   });
 }
