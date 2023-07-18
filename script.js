@@ -1,7 +1,9 @@
 'use strict';
+// select elment
 const buttonsEl = document.querySelectorAll('button');
 const inputFieldEl = document.getElementById('result');
 const historyEl = document.getElementById('history');
+const deleteBtn = document.querySelector('.delete');
 
 // An array to store the history of calculations
 const history = [];
@@ -58,13 +60,13 @@ function calculateResult() {
 }
 
 function appendValue(buttonValue) {
-  inputFieldEl.value += buttonValue;
+  const trimmedValue = buttonValue.trim();
+  inputFieldEl.value += trimmedValue;
 }
 
-// innerHTML is a property in  is used to access the HTML content inside an element and also to modify the content.
 function updateHistory() {
   // Clear the display of the history
-  historyEl.innerHTML = '';
+  historyEl.textContent = '';
 
   // The forEach() method calls a function for each element in an array.
   // The document.createElement() function in  is used to create a new HTML element. It allows you to dynamically generate new HTML elements and add them to the page.
@@ -72,7 +74,6 @@ function updateHistory() {
   history.forEach(calculation => {
     // The createElement() method creates an element node.
     const calculationEl = document.createElement('div');
-    console.log(calculationEl);
     calculationEl.textContent = `${calculation.expression} = ${calculation.result}`;
 
     // The appendChild() function is used to add an element as a child inside a target element (typically an HTML element).
@@ -80,4 +81,12 @@ function updateHistory() {
     historyEl.appendChild(calculationEl);
     historyEl.classList.add('inputStyle');
   });
+}
+
+deleteBtn.addEventListener('click', clearHistory);
+
+function clearHistory() {
+  history.length = 0;
+  updateHistory();
+  historyEl.classList.remove('inputStyle');
 }

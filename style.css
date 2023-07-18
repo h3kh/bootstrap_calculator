@@ -40,6 +40,14 @@
   background-color: #ddd;
 }
 
+.delete {
+  transition: color 0.3s ease;
+}
+
+.delete:hover {
+  color: #a8a1a1;
+}
+
 .equal {
   grid-row: span 2;
 }
