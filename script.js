@@ -44,6 +44,8 @@ function calculateResult() {
   } else if (expression.includes('^')) {
     const operands = expression.split('^');
     result = Math.pow(parseFloat(operands[0]), parseFloat(operands[1]));
+  } else {
+    result = expression;
   }
 
   inputFieldEl.value = result;
@@ -80,10 +82,12 @@ function updateHistory() {
   });
 }
 
+// delete button
 deleteBtn.addEventListener('click', clearHistory);
 
 function clearHistory() {
   history.length = 0;
   updateHistory();
   historyEl.classList.remove('inputStyle');
+  inputFieldEl.value = '';
 }
