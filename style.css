@@ -57,4 +57,12 @@
   padding: 10px;
   font-size: 24px;
   text-align: right;
+  /*  Transition for all features with a duration of 0.3 seconds and ease movement*/
+  transition: all 0.3s ease;
+}
+
+/* The :focus selector is allowed on elements that accept keyboard events or other user inputs. */
+
+.inputStyle:focus {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3) inset;
 }
